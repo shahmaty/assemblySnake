@@ -50,43 +50,43 @@ l1:
 	la	$t0, frameBuffer	# load frame buffer addres
 	addi	$t1, $zero, 64		# t1 = 64 length of row
 	li 	$t2, 0x00000000		# load black color
-draw_border_top:
+drawBorderTop:
 	sw	$t2, 0($t0)		# color Pixel black
 	addi	$t0, $t0, 4		# go to next pixel
 	addi	$t1, $t1, -1		# decrease pixel count
-	bnez	$t1, draw_border_top	# repeat unitl pixel count == 0
+	bnez	$t1, drawBorderTop	# repeat unitl pixel count == 0
 	
 	# Bottom wall section
 	la	$t0, frameBuffer	# load frame buffer addres
 	addi	$t0, $t0, 7936		# set pixel to be near the bottom left
 	addi	$t1, $zero, 64		# t1 = 512 length of row
 
-draw_border_bot:
+drawBorderBot:
 	sw	$t2, 0($t0)		# color Pixel black
 	addi	$t0, $t0, 4		# go to next pixel
 	addi	$t1, $t1, -1		# decrease pixel count
-	bnez	$t1, draw_border_bot	# repeat unitl pixel count == 0
+	bnez	$t1, drawBorderBot	# repeat unitl pixel count == 0
 	
 	# left wall section
 	la	$t0, frameBuffer	# load frame buffer address
 	addi	$t1, $zero, 256		# t1 = 512 length of col
 
-draw_border_left:
+drawBorderLeft:
 	sw	$t2, 0($t0)		# color Pixel black
 	addi	$t0, $t0, 256		# go to next pixel
 	addi	$t1, $t1, -1		# decrease pixel count
-	bnez	$t1, draw_border_left	# repeat unitl pixel count == 0
+	bnez	$t1, drawBorderLeft	# repeat unitl pixel count == 0
 	
 	# Right wall section
 	la	$t0, frameBuffer	# load frame buffer address
 	addi	$t0, $t0, 508		# make starting pixel top right
 	addi	$t1, $zero, 255		# t1 = 512 length of col
 
-draw_border_right:
+drawBorderRight:
 	sw	$t2, 0($t0)		# color Pixel black
 	addi	$t0, $t0, 256		# go to next pixel
 	addi	$t1, $t1, -1		# decrease pixel count
-	bnez	$t1, draw_border_right	# repeat unitl pixel count == 0
+	bnez	$t1, drawBorderRight	# repeat unitl pixel count == 0
 	
 	### draw initial snake section
 	la	$t0, frameBuffer	# load frame buffer address
