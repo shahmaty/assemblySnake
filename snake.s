@@ -1,3 +1,5 @@
+# Author: Daniel Shevelev
+# Purpose: Create and run a classic game of snake in assembly
 
 ###############################################################
 ### 			BITMAP SETTINGS			    ###	
@@ -13,8 +15,6 @@
 .data
 
 frameBuffer: 	.space 	0x80000		#512 wide x 256 high pixels
-m:		.word 	40
-n:		.word	20
 xVel:		.word	0		# x velocity start 0
 yVel:		.word	0		# y velocity start 0
 xPos:		.word	50		# x position
