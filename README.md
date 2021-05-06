@@ -3,6 +3,7 @@ This is the classic snake game created in Mips
 
 This is intened to be used with Mars Mips Simulator and its bitmap display and Keyboard MMIO
 
+Mars has a chance of freezing which will require you to kill the Mars process
 
 Bitmap display settings:
 
